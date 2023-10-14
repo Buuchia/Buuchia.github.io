@@ -1,0 +1,563 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Setting up the palette */
+:root  {
+  --col-01: rgb(0, 0, 0);
+  --col-02: rgb(255, 255, 0); 
+  --col-03: rgb(0, 0, 255);
+  --col-04: rgba(0,255,250, 0.5);
+  --col-05: rgba(255, 128, 0, 0.5);
+  --col-06: rgb(255, 165, 0.5);
+  --col-07: rgba(255, 224, 161, 0.5);
+  --col-08: rgba(255, 255, 255, 0.5);
+  --col-09: rgb(255, 156, 42);
+  --border-01: rgb(0, 0, 0) dotted;
+}
+
+/* this changes color of texts into blue when mouse highlights them */
+::selection {
+  color: var(--col-03);
+}
+
+/* styling the links */
+a {
+  color: var(--col-01);
+  text-decoration: dotted underline;
+}
+
+a:hover {
+  color: white;
+}
+
+a:active {
+  color: var(--col-02);
+}
+
+/* I generate the grainy gradient filter with the generator at link: https://grainy-gradients.vercel.app/ 
+It consists of a noise layer underneath CSS gradient layer, some contrast and brightness adjustments with 
+CSS Filter function and a mix-blend-mode set to screen to give off a sense of fuzziness */
+body {
+  color: white;
+  font-size: 18px;
+  filter: contrast(150%) brightness(100%);
+  background:
+               linear-gradient(180deg, var(--col-04), rgba(0,0,0,0)),
+               linear-gradient(0deg, var(--col-05), rgba(0,0,0,0)),
+               url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2' numOctaves='3.56' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); 
+  mix-blend-mode: screen;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+#FlexWrapper{
+  display: flex;
+}
+
+/* Cloud 1 */
+#chorus-1{
+  width: 40vw;
+  text-align: center;
+  padding: 1rem;
+  position: absolute;
+  top: 40%;
+  animation: movingCloud1 30s infinite ease-in;
+}
+
+/* When a user hovers on a cloud, the standing seagull cursor appears as a feedback to let them know that 
+they successfully paused the chosen cloud's movement. 
+The texts' color also change to black for better readability, and also to distinguish from other moving clouds */
+#chorus-1:hover {
+  animation-play-state: paused;
+  z-index: 9999;
+  color: var(--col-01);
+  cursor: url('./icons/icons8-seagull-66.png'), auto;
+}
+
+/* Positioning the paragraphs into cloud shape */
+/* there must have been a better way to arrange the texts into cloud shape, but my attempts with shape-outside 
+and shape-margin did not bring desired outcome, so I manually locate them with the transform property */
+#im-hanging {
+ transform: translate(-10vw,0);
+}
+
+#until-i {
+  transform: translate(-3vw,0);
+}
+
+#so-you {
+  transform: translate(-10rem, 0);
+}
+
+#will-you {
+  transform: translate(-6rem,0);
+}
+
+/* Cloud 2 */
+#verse-1 {
+  width: 40vw;
+  text-align: center;
+  padding: 1rem;
+  margin: 2rem;
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  animation: movingCloud2 40s infinite ease-in;
+}
+
+#verse-1:hover {
+  animation-play-state: paused;
+  z-index: 9998;
+  color: var(--col-01);
+  cursor: url('./icons/icons8-seagull-66.png'), auto;
+} 
+
+
+#i-once {
+  transform: translate(3rem,0);
+}
+
+#then-they {
+  transform: translate(-5rem,0);
+}
+
+#for-the {
+  transform: translate(4rem,0);
+}
+
+#i-hope {
+  transform: translate(-3rem,0);
+}
+
+#you-like {
+  transform: translate(5rem,0);
+}
+
+#but-i{
+  transform: translate(12rem,0);
+}
+
+#i-saw{
+  transform: translate(7rem,0);
+}
+
+/* Cloud 3 */
+#verse-2 {
+  width: 40vw;
+  text-align: center;
+  padding: 1rem;
+  margin: 2rem;
+  transform: translate(30vw,-6vh);
+  position: absolute;
+  top: 70%;
+  animation: movingCloud3 45s infinite ease-in;
+}
+
+#verse-2:hover {
+  animation-play-state: paused;
+  z-index: 9997;
+  color: var(--col-01);
+  cursor: url('./icons/icons8-seagull-66.png'), auto;
+} 
+
+#so-summer {
+  transform: translate(-8rem,0);
+}
+
+#as-much{
+  transform: translate(-5rem,0);
+}
+
+#somehow {
+  transform: translate(-13rem,0);
+}
+
+#quietly {
+  transform: translate(-7rem,0);
+}
+
+#though {
+  transform: translate(-1rem,0);
+}
+
+/* Cloud 4*/
+#verse-3 {
+  width: 40vw;
+  text-align: center;
+  padding: 2rem;
+  margin: 2rem;
+  position: absolute;
+  top: 53%;
+  animation: movingCloud4 50s infinite ease-in;
+} 
+
+#verse-3:hover {
+  animation-play-state: paused;
+  z-index: 9996;
+  color: var(--col-01);
+  cursor: url('./icons/icons8-seagull-66.png'), auto;
+} 
+
+#which-sun{
+  transform: translate(7rem,0);
+}
+
+#or-other{
+  transform: translate(-2rem,0);
+}
+
+#how-many{
+  transform: translate(-8rem,0);
+}
+
+/* Cloud 5 */
+#chorus-2 {
+  margin: 2rem;
+  width: 40vw;
+  text-align: center;
+  padding: 1rem;
+  position: absolute;
+  top: 64%;
+  animation: movingCloud5 55s infinite ease-in;
+}
+
+#chorus-2:hover {
+  animation-play-state: paused;
+  z-index: 9995;
+  color: var(--col-01);
+  cursor: url('./icons/icons8-seagull-66.png'), auto;
+} 
+
+#im-still{
+  transform: translate(-2rem,0);
+}
+
+#trying {
+  transform: translate(-10rem,0);
+}
+
+#abandoning {
+  transform: translate(-4rem,0);
+}
+
+#how-many-summers {
+  transform: translate(2rem,0);
+}
+
+#so-you-are{
+  transform: translate(7rem,0);
+}
+
+#then-i-may{
+  transform: translate(1rem,0);
+}
+
+/* Animating the clouds to move across the screen from right to left hand side */
+@keyframes movingCloud1 {
+  0% {left: 100%;}
+  100% {left: -30%;}
+} 
+
+@keyframes movingCloud2 {
+  0% {left: 110%;}
+  100% {left: -40%;}
+}
+@keyframes movingCloud3 {
+  0% {left: 130%;}
+  100% {left: -60%;}
+} 
+
+@keyframes movingCloud4 {
+  0% {left: 170%;}
+  100% {left: -40%;}
+}
+@keyframes movingCloud5 {
+  0% {left: 190%;}
+  100% {left: -40%;}
+}
+
+/* Creating the suns */
+/* use mask-image to give the ray a soft edge */
+.suns {
+  width: 10rem;
+  height: 10rem;
+  background: radial-gradient(transparent 50%, white), radial-gradient(var(--col-02), transparent 80%);
+  -webkit-mask-image: radial-gradient(var(--col-01) 40%, transparent 68%);
+  mask-image: radial-gradient(var(--col-01) 40%, transparent 68%);
+  border-radius: 50%;
+  transition: 10s ease;
+  
+  /* duplicated the mask-image and its prefix to hide the same proportion the scales of the rays */
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    border-radius: 50%;
+    -webkit-mask-image: radial-gradient(var(--col-01) 40%, transparent 68%);
+    mask-image: radial-gradient(var(--col-01) 40%, transparent 68%);
+  }
+  
+   /* Making the rays with repeating-conic-gradient */
+  &::before {
+    background: repeating-conic-gradient(from 0deg, var(--col-08) 0deg 15deg, transparent 10deg 30deg);
+    animation: scale 3s linear infinite;
+  }
+  
+  /* Animating main body of the sun */
+  /* calculation is used to create the soft blend between the outer orange and transparent region*/
+  &::after {
+    background: radial-gradient(var(--col-02), var(--col-09) 30%, transparent calc(30% + 10%) 100%), repeating-conic-gradient(from 0deg, var(--col-07) 0deg 10deg, transparent 0deg 10deg);
+  }
+}
+
+/* Scale animation to create natural pulsating glow of the rays */
+@keyframes scale {
+  0%,
+  100% {
+    transform: scale(0.5);
+  }
+  20%{
+    transform: scale(1)
+  }
+  40% {
+    transform: scale(0.8);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+}
+
+/* The downcast cursor shows up as a feedback to let the user know that the mouse is 
+hovering on a sun at the moment, as sometimes the drifting cloud layers in front of the suns
+interrupt the interaction with the suns. */
+/* I choose this cursor particurlarly because it mimics the expression of sweating due to getting too near to the suns' heat */
+.suns:hover {
+  transform: scale(1.5) rotate(360deg);
+  transition: 5s ease;
+  filter: contrast(1.25);
+  cursor: url("./icons/downcast/downcast-64x64.png"), auto;
+  z-index: 10000;
+}
+
+/* I want each sun to appear at different point of time, so I give each of them a seperate animation-delay */
+#sun-1 {
+  position: absolute;
+  left: 87%;
+  top: 70%;
+  animation: appear 5s linear;
+  animation-delay: 1s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+/* the animation-fill-mode above allows the suns to retain the values after the last keyframes, which is opacity: 1 at 100%,
+so the sun doesn't go back to 0 and disappear. */
+
+#sun-2 {
+  position: absolute;
+  left: 65%;
+  top: 35%;
+  animation: appear 5s linear;
+  animation-delay: 2.1s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+#sun-3 {
+  position: absolute;
+  left: 40%;
+  top: 60%;
+  animation: appear 5s linear;
+  animation-delay: 1.5s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+#sun-4 {
+  position: absolute;
+  left: 20%;
+  top: 75%;
+  animation: appear 5s linear;
+  animation-delay: 2.5s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+#sun-5 {
+  position: absolute;
+  left: 5%;
+  top: 47%;
+  animation: appear 5s linear;
+  animation-delay: 1.5s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+/* Animating the suns' appearance */
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#modalDialog {
+  margin: 4rem;
+  text-align: left;
+  padding: 2rem;
+  align-self: center;
+  width: 50vw;
+  height: 30vh;
+  border-style: none;
+  background-color: transparent;
+}
+
+#modalDialog::backdrop {
+  background-color: rgb(255, 0, 0, 0.5) ;
+}
+
+/* 'Click me!' and "Play/Pause" button */
+#showModal, #playButton {
+  width: 5rem;
+  height: 5rem;
+  text-align: center;
+  margin: 1rem;
+  border-radius: 50%;
+  position: relative;
+  float:right;
+  background-color: var(--col-08);
+  border: var(--border-01);
+  color: var(--col-01);
+  cursor: pointer;
+}
+/* I think having buttons here provides signifiers to control the audio and to get important note from the author. 
+The pointer cursor here also allows the user to get the feedback and anticipate information after they click on the buttons */
+
+#playButton {
+  background-image: url('./icons/speaker-off/icons8-no-audio-48.png');
+  background-repeat: no-repeat; /* The icon was repeating inside the circle button, so I added this to get a single one */
+  background-position: center;
+  background-size: 40%;
+}
+
+#showModal:hover, #playButton:hover {
+  background-color: var(--col-06);
+  z-index: 9999;
+}
+
+#showModal:active, #playButton:active {
+  background-color: rgb(255, 86, 1);
+}
+
+ul li {
+  margin-left: 1rem;
+  list-style-type: circle; 
+}
+
+/* horizontal line inside modal dialog */
+hr {
+  margin-top:1rem;
+  margin-bottom: 1rem;
+} 
+
+/* Close button */
+#closeModal {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 5rem;
+  height: 5rem;;
+  float: right;
+  border-radius: 50%;
+  border: var(--border-01);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#closeModal:hover {
+  background-color: var(--col-08);
+}
+
+#closeModal:active {
+  background-color: var(--col-04);
+}
+
+/* Animating the ocean waves */
+.ocean { 
+  width:100%;
+  height: 5%;
+  position: absolute;
+  left:0;
+  bottom: 100%;
+  rotate: 180deg; /* I turned the ocean waves upside down to match with the perspective of the character */
+  background: #00B3C1;
+}
+
+/* I drew the wave-2.png in Adobe Illustrator.
+Since its fill color was too bright, I made use of the CSS Filter function so that it did not stand out too much from other elements. */
+/* Maybe next time I will export it as a svg to redo the coloring more easily. */
+div.wave {
+  background: url(./images/wave-2.png);
+  position: absolute;
+  min-height: 200px;
+  position: absolute;
+  width: 100%;
+  top: -150px;
+  opacity: 0.4;
+  filter: saturate(4) hue-rotate(15deg) brightness(0.6);
+  animation: wavy1 10s ease -1s infinite;
+  transform: scale(1.1); 
+}
+/* The original size shows some flaws of discontinuing waves on two ends of the screen when the waves were moving up and down,
+hence the scale hides those part. I believe there is better way to solve that but I could not figure out yet.*/
+
+/* The :nth-of-type() gives every div with the same class "wave" same starting appearance, then I give them different opacity 
+and off set the animation so that the waves move more naturally, not in a uniformed way */
+div.wave:nth-of-type(2) {
+  top: -180px;
+  opacity: 0.6;
+  animation: wavy2 10s ease infinite;
+}
+
+div.wave:nth-of-type(3) {
+  top: -190px;
+  opacity: 1;
+  animation: wavy3 10s ease -1.25s infinite;
+}
+
+@keyframes wavy1 {
+  0%, 100% {
+    top: -150px;
+  }
+  60% {
+    top: -270px;
+  }
+}
+
+@keyframes wavy2 {
+  0%, 100% {
+    top: -180px;
+  }
+  60% {
+    top: -240px;
+  }
+}
+
+@keyframes wavy3 {
+  0%, 100% {
+    top:-190px;
+  }
+  60% {
+    top: -200px;
+  }
+}
+

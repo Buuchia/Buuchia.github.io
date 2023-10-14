@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sophie's A3 - A Summer Gasp</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" type="image/png" href="favicons/icons8-sun-behind-large-cloud-emoji/icons8-sun-behind-large-cloud-48.png"> 
+
+    <script src="script.js" defer></script>
+   
+  </head>
+
+  <body>
+
+    <!-- The ocean waves -->
+     <div class="ocean">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+      </div>
+
+    <!-- The FlexWrapper contains both the sun-container and the poem-container -->
+    <div id="FlexWrapper">
+
+      <div id="multiple-suns" class="sun-container">
+        <div id="sun-1" class="suns"></div>
+        <div id="sun-2" class="suns"></div>
+        <div id="sun-3" class="suns"></div>
+        <div id="sun-4" class="suns"></div>
+        <div id="sun-5" class="suns"></div>
+      </div>
+  
+      <!-- 'A Summer Gasp' - poem by Lam Vo (s3930375).
+        Lam permitted me to use the poem as long as I credit her inside the code or on the page -->
+      <div class="poem">
+        <!-- Cloud 1 -->
+        <div id="chorus-1">
+          <p id="im-hanging" >i'm hanging myself up here,<br>
+          under the scorching heat of summer,</p>
+          <p id="until-i" >until i get withered, not a sprinkle of whatever<br>
+          remained inside i swear.</p>
+          <p id="so-you" >so you are to grab a bowl of water, or more,<br> 
+          rushing to revive my dead body<br>
+          until it's filled up inside.</p>
+          <p id="will-you">will you?<br>
+          then i may ask, out of nowhere<br>
+          what season is it now?</p>
+        </div>
+
+        <!-- Cloud 2 -->
+        <div id="verse-1">
+          <p id="i-once">i once heard spring is the right season for one's<br>
+          death,</p>
+          <p id="then-they">then they changed it to rebirth.</p>
+          <p id="for-the">for the balmy breezes that once were my friends,<br>
+          for you,</p>
+          <p id="i-hope">i hope it's spring now.</p>
+          <p id="you-like">you like spring<br>
+          and you feel like blooming during<br>
+          this time.</p>
+          <p id="but-i">but i did not see you bloom<br>
+          decently.</p>
+          <p id="i-saw">i saw you wither,<br>
+          and made it<br>
+          who i am, to me and to you.</p>
+        </div>
+
+        <!-- Cloud 3 -->
+        <div id="verse-2">
+          <p id="so-summer">so summer,<br>
+          i like it better,</p>
+          <p id="as-much">as much as you<br>
+          whinge about melting down,</p>
+          <p id="somehow">somehow i treasure the sun,<br>
+          as if i'm the ocean</p>
+          <p id="quietly">quietly and patiently absorbing its<br>
+          power</p>
+          <p id="though">though i'm draining away.</p>
+        </div>
+
+        <!-- Cloud 4 -->
+        <div id="verse-3">
+          <p id="which-sun">which sun is mine?<br>
+          in the middle or on the side<br>
+          among multiples of suns hanging on the pale sky,</p>
+          <p id="or-other">or other skies of cherry pink or cotton blue,<br>
+          that my eyes haven't reached.</p>
+          <p id="how-many">how many seasons<br>
+          will it take me to move one sun to my<br>
+          room of all favorites?</p>
+        </div>
+
+        <!-- Cloud 5 -->
+        <div id="chorus-2">
+          <p id="im-still">i'm still hanging up here,<br>
+          under the sweltering heat of summer,</p>
+          <p id="trying">trying to imitate you</p>
+          <p id="abandoning">abandoning my words,</p>
+          <p id="how-many-summers">how many summers have passed?<br>
+          until i get withered, not a sprinkle of whatever<br>
+          remained inside i swear.</p>
+          <p id="so-you-are">so you are to grab a bowl of water, or more, <br>
+          rushing to revive my dead body<br>
+          until i'm an ocean...</p>
+          <p id="then-i-may">then i may ask, out of nowhere<br>
+          what season is it now?</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- The modalDialog contains brief instruction to guide user interaction, explanation about 
+    the website concept, and attributions-->
+
+    <dialog id="modalDialog">
+      <p id="modalContent">
+        <h3>About the website</h3>
+
+        <ul><strong>Instruction:</strong><br>
+          <li>Hover on each cloud to pause its movement (or test if you could keep up with them!).</li>
+          <li>Hover on the suns if you are not afraid of the burning heat.</li>
+          <li>Some clouds get into a clutter, but they are clouds. Be patient and take your time.</li>
+          <li>Enable the sound icon for a more immersive experience.</li>
+        </ul>
+        <br>
+        <p>
+          <p><strong>Concept:</strong><br>
+          <cite>A Summer Gasp</cite> is a melancholic contemplation of a boy's anthropomorphic sadness about 
+          the meaning of its existence.
+          The website is based on the illusion that the sadness creature sees due to 
+          the scorching heat of summer, while hanged upside down.<br>
+        </p>
+          <hr>
+          <p><strong>Attribution</strong></p>
+          Poem courtesy Lam Vo (s3930375).<br>
+          Code by Buu Chi Mach (s3926752).<br>
+          <!-- ocean ambience sound's source -->
+          <p>"Ambience, Seaside Waves, Close, A.wav" by InspectorJ  <a target="_blank" href="https://freesound.org/people/InspectorJ/sounds/400632/" >(www.jshaw.co.uk)</a> of <a target="_blank" href="https://freesound.org/">Freesound.org</a></p>
+          <!-- downcast icon's source -->
+          <a href="https://www.flaticon.com/free-icons/downcast" title="downcast icons">Downcast icons created by Senapedia - Flaticon</a>
+          <br>
+          <!-- Sun animation tutorial -->
+          <a target="_blank" href="https://css-irl.info/heatwave-animated-sun-illustration/">Heatwave: An Animated CSS Sun Illustration</a> by <a target="_blank" href="https://css-irl.info/">CSS {In Real Life}</a>
+          <br>
+          <!-- speaker off icon -->
+          <a target="_blank" href="https://icons8.com/icon/xfXdaRWVPO8K/no-audio">No Audio</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+          <br>
+          <!-- seagull cursor's source -->
+          <a target="_blank" href="https://icons8.com/icon/EolXpw5m4PkY/seagull">Seagull</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+          <br>
+          <!-- speaker on icon -->
+          <a target="_blank" href="https://icons8.com/icon/87092/speaker">Speaker</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+          <br>
+          <!-- favicon's source -->
+          <a target="_blank" href="https://icons8.com/icon/rhba9Nt5N4jA/sun-behind-large-cloud">Sun Behind Large Cloud</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+    
+        </p>
+      </p>
+
+      <button id="closeModal">Close</button>
+
+    </dialog>
+
+    <button id="showModal">Click me!</button>
+
+    <!-- Reference Link: https://www.w3schools.com/tags/tag_audio.asp 
+    The audio lasts around 5 minutes, but I want it to loop infinitely, 
+    so I add a loop = "true" to the audioElement id-->
+    <div class="audio-element-wrapper">
+
+      <audio id="audioElement" loop="true">
+        <source src="./audio/wave-sound.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+      </audio>
+
+      <button class="audio-control-button" id="playButton"></button>
+    </div>
+
+  </body>
+</html>
+
+<!-- Reflection -->
+<!-- 
+  UPDATES: 
+  Some adjustments have been done compared to my original proposal.
+  - For example, I did not create the solid clouds to hide the the text clouds but instead going straight to revealing them,
+  and the hover interaction is used to pause the clouds to let the user read the content.
+  //
+  - I also remove the wiping blur mask to reveal the scene effect, since it is a nice feature to have, but not the most necessary one.
+  The biggest reason is that my skill is still limited, and considering the project's time scope, focusing on creating the paint brush effect
+  alone will take a lot of time, so I decide to leave it as an exercise outside of this course and concentrate on other must-have elements.
+  //
+  - From in-class feedback, I added the scale and rotation transform to the suns triggered by hover interaction instead of being static.
+
+  CHALLENGES:
+  - I wanted to animate the ocean waves to move on the x-axis from one side to the other side and loop.
+  However, when I replace the svg of the original code with my wave-2.png, the repeat-x of could not create a seamless edge among the waves.
+  - Eventually, I just move the waves on the y-axis and it turned out less disruptive to the user's interaction with the poem as I want the movement
+  to be very subtle, but I still wonder how the issue above could be solved.
+  //
+  - Sometimes when the mouse cursor hovers on the sun or blank areas, though the cloud does not move in where the cursor is yet,
+  the cursor selects the cloud layer because of the width of cloud's box (transparent). 
+  - I tried to fix this by giving the two elements two different cursors to give the user feedback of what their cursor actually hovers on.
+  However, it will need a more efficient solution if it is developed into a wider project to avoid causing confusion.
+  //
+  - About the audio, because the file size was too big, I could not upload the project folder on github.
+  - I found the "Adding a file to a repository using the command line" but it sounds so complicated so I edited the source to only 18s and converted to a .mp3 file.
+  The background sound just loops anyway so I think that is ok for now.
+  - However it may be difficult for projects in which I need to keep the original big file sizes, so I may need to clone my repository on local computer
+  or using the Git Large File Size Storage. 
+-->
